@@ -1,36 +1,33 @@
 import 'package:dialymath/widgets/coustm_navbar.dart';
-import 'package:dialymath/widgets/home_view.dart';
-import 'package:dialymath/widgets/menu_view.dart';
-import 'package:dialymath/widgets/setting_view.dart';
+import 'package:dialymath/widgets/friday_view.dart';
+import 'package:dialymath/widgets/monday_view.dart';
+import 'package:dialymath/widgets/saturday_view.dart';
+import 'package:dialymath/widgets/sunday_view.dart';
+import 'package:dialymath/widgets/thursday_view.dart';
+import 'package:dialymath/widgets/tuesday_view.dart';
+import 'package:dialymath/widgets/wednesday_view.dart';
 import 'package:flutter/material.dart';
-
 void main() {
-  runApp(const MyApp());
+  runApp(const Dialymath());
 }
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class Dialymath extends StatelessWidget {
+  const Dialymath({super.key});
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      home: const Navbar(),
       debugShowCheckedModeBanner: false,
-      home: Navbar(),
-      
+      routes: {
+        'Saturday':(context) => const Saturday(),
+        'Sunday':(context) => const Sunday(),
+        'Monday':(context) => const Monday(),
+        'Tuesday':(context) => const Tuesday(),
+        'Wednesday':(context) => const Wednesday(),
+        'Thursday':(context) => const Thursday(),
+        'Friday':(context) => const Friday(),
+      },
+      initialRoute: 'Navbar',
 
-      // routes:{
-      //    'Homeview'   :(context) => const Homeview(),
-      //    'Menu'   :(context) => const Menu(),
-      //    'Settingview':(context) => const Setting(),
-      //    'Navbar'     :(context) => const  Navbar(),
-      //   // 'Saturday'   :(context) => const Saturday(),
-      //   // 'Friday'     :(context) => const Friday(),
-      //   // 'Sunday'     :(context) => const Sunday(),
-      //   // 'Monday'     :(context) => const Monday(),
-      //   // 'Tuesday'    :(context) => const Tuesday(),
-      //   // 'Wednesday'  :(context) => const Wednesday(),
-      //   // 'Thursday'   :(context) => const Thursday(),
-      //   },
-      //   initialRoute:'Navbar',
     );
   }
 }
