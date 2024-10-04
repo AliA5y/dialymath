@@ -1,6 +1,6 @@
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:dialymath/widgets/home_view.dart';
+import 'package:dialymath/screen/home_screen/home_screen.dart';
 import 'package:dialymath/widgets/menu_view.dart';
 import 'package:dialymath/widgets/setting_view.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,7 @@ class _NavbarState extends State<Navbar> {
     int slectedindex=0;
      List<Widget>screens=[
        const     Menu(),
-       const Homeview(),
+       const HomeScreen(),
        const  Setting(),
    ];
   @override

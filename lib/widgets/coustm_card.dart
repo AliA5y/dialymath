@@ -1,12 +1,15 @@
 import 'package:dialymath/widgets/coustm_bt.dart';
+import 'package:dialymath/widgets/coustm_day.dart';
 import 'package:dialymath/widgets/coustm_text.dart';
 import 'package:flutter/material.dart';
 
 class CoustmCard extends StatelessWidget {
-const CoustmCard({super.key, required this.bordercolor, required this.dayname, required this.rootsname, });
+const CoustmCard({super.key, required this.bordercolor,
+ required this.dayname,required this.day });
 final Color bordercolor;
 final String dayname;
-final String rootsname;
+final int day;
+
   @override
   Widget build(BuildContext context) {
     return  Container(
@@ -19,7 +22,9 @@ final String rootsname;
         ),
         child: GestureDetector(
           onTap: (){
-            Navigator.pushNamed(context, rootsname);
+            Navigator.push(context, MaterialPageRoute(builder:(context) {
+              return Coustmday(dayname: dayname, day: day);
+            },));
           },
           child: Column(
             children: [
@@ -33,7 +38,7 @@ final String rootsname;
                   children: [
                   ],
                 ),
-                trailing: const CoustmBticon(icon: Icons.calendar_month_outlined,height: 50,width: 50,)
+                trailing: const CoustmBticon(icon: Icons.calendar_month_outlined,height: 40,width: 50,)
               )
             ],
           ),

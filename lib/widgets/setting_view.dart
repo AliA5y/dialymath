@@ -1,4 +1,3 @@
-import 'package:dialymath/widgets/coustm_sheet.dart';
 import 'package:flutter/material.dart';
 class Setting extends StatelessWidget {
   const Setting({super.key});
@@ -7,9 +6,6 @@ class Setting extends StatelessWidget {
     return  Scaffold(
        floatingActionButton: FloatingActionButton(
             onPressed: (){
-              showModalBottomSheet(context: context, builder: (context){
-                return const Modelsheet();
-              });
             },
             child: const Icon(Icons.add,color: Colors.purple,),
             ),

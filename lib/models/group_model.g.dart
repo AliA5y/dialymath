@@ -17,22 +17,25 @@ class GroupModelAdapter extends TypeAdapter<GroupModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return GroupModel(
-      groupname:  fields[0] as String,
-      groupgrade: fields[1] as String,
-      grouptime:  fields[2] as String,
+      day: fields[5] as int?,
+      groupname: fields[0] as String?,
+      groupgrade: fields[1] as String?,
+      grouptime: fields[2] as String?,
     );
   }
 
   @override
   void write(BinaryWriter writer, GroupModel obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(4)
       ..writeByte(0)
       ..write(obj.groupname)
       ..writeByte(1)
       ..write(obj.groupgrade)
       ..writeByte(2)
-      ..write(obj.grouptime);
+      ..write(obj.grouptime)
+      ..writeByte(5)
+      ..write(obj.day);
   }
 
   @override

@@ -2,9 +2,10 @@ import 'package:dialymath/widgets/coustm_text.dart';
 import 'package:flutter/material.dart';
 
 class CoustmBt extends StatelessWidget {
-  const CoustmBt({super.key, this.ontab, required this.bttext});
+  const CoustmBt({super.key, this.ontab, required this.bttext,this.isload=false});
   final void Function()?ontab;
   final String bttext;
+  final bool isload;
 
 
   @override
@@ -31,7 +32,10 @@ class CoustmBt extends StatelessWidget {
                ]
                )
             ),
-            child:Center(child:CoustmText(text: bttext, textsize: 15, textcolor: Colors.white)) ,
+            child:Center(
+            child: isload ? const SizedBox(width:20,height: 20,
+            child:CircularProgressIndicator(strokeWidth: 2.5,color: Colors.white,)) :
+            CoustmText(text: bttext, textsize: 15, textcolor: Colors.white)) ,
       ),
     );
   }
