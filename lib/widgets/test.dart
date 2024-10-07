@@ -24,16 +24,6 @@ class _TestState extends State<Test> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: CoustmBt(
-          bttext: 'create group',
-          ontab: () {
-            showModalBottomSheet(
-                isScrollControlled: true,
-                context: context,
-                builder: (context) {
-                return AddGroupBottomSheet(day: widget.day,);
-                });
-          }),
       body:Padding(
         padding: const EdgeInsets.all(24),
         child: Column(
