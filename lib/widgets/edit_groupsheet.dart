@@ -17,15 +17,16 @@ class _EditgroupsheetState extends State<Editgroupsheet> {
   @override
   Widget build(BuildContext context) {
     // TODO: Here we removed the unneccesary bloc provider
-    return BlocConsumer<GroupCubitCubit, GroupCubitState>(
+    //TODO:here we just provided the right cubit
+    return BlocConsumer<GroupCubit, GroupState>(
       listener: (context, state) {
-        if (state is AddgroupFailure) {
-          print('faield${state.errMessage}');
-        }
-        if (state is AddgroupSuccess) {
-          // BlocProvider.of<GroupCubit>(context).fetchAllgroups(widget.day);
-          Navigator.pop(context);
-        }
+        // if (state is AddgroupFailure) {
+        //   print('faield${state.errMessage}');
+        // }
+        // if (state is GroupSuccess) {
+        //   BlocProvider.of<GroupCubit>(context).fetchAllGroups(widget.day);
+        //   Navigator.pop(context);
+        // }
       },
       builder: (context, state) {
         return AbsorbPointer(
