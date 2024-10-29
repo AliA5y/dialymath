@@ -46,10 +46,11 @@ class GroupCard extends StatelessWidget {
             backgroundColor: const Color.fromARGB(255, 223, 28, 28),
             label: 'delet',
             icon: Icons.delete,
-            onPressed: (context) => {
-                  group.delete(),
-                  //  BlocProvider.of<GroupCubit>(context).fetchAllgroups(day)
-                })
+            onPressed: (context) {
+              group.delete();
+              // TODO: here we fetch all groups to refresh screen
+              BlocProvider.of<GroupCubit>(context).fetchAllGroups(day);
+            })
       ]),
       child: Container(
         //TODO: remove the fixed hieght of the card
