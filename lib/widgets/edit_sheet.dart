@@ -1,4 +1,4 @@
-import 'package:dialymath/cubits/cubit/group_cubit_cubit.dart';
+import 'package:dialymath/cubits/cubit/student_cubit.dart';
 import 'package:dialymath/models/group_model.dart';
 import 'package:dialymath/models/student_model.dart';
 import 'package:dialymath/widgets/edit_form.dart';
@@ -18,20 +18,20 @@ class _EditsheetState extends State<Editsheet> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GroupCubitCubit(),
-      child: BlocConsumer<GroupCubitCubit, GroupCubitState>(
+      create: (context) => StudentCubit(),
+      child: BlocConsumer<StudentCubit, StudentState>(
         listener: (context, state) {
-          if (state is AddgroupFailure) {
+          if (state is AddStudentFailure) {
             print('faield${state.errMessage}');
           }
-          if (state is AddgroupSuccess) {
+          if (state is AddStudentSuccess) {
             // BlocProvider.of<GroupCubit>(context).fetchAllgroups(widget.day);
             Navigator.pop(context);
           }
         },
         builder: (context, state) {
           return AbsorbPointer(
-              absorbing: state is AddgroupLoading ? true : false,
+              absorbing: state is AddStudentLoading ? true : false,
               child: Padding(
                 padding: EdgeInsets.only(
                     left: 16,

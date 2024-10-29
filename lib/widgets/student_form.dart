@@ -1,4 +1,4 @@
-import 'package:dialymath/cubits/cubit/group_cubit_cubit.dart';
+import 'package:dialymath/cubits/cubit/student_cubit.dart';
 import 'package:dialymath/models/student_model.dart';
 import 'package:dialymath/widgets/coustm_bt.dart';
 import 'package:dialymath/widgets/coustm_textfield.dart';
@@ -69,7 +69,7 @@ class _StudentFormState extends State<StudentForm> {
                   children: [
                     CoustmBt(
                       bttext: 'Add Student',
-                      isload: State is AddgroupLoading ? true : false,
+                      isload: State is AddStudentLoading ? true : false,
                       ontab: () {
                         if (formKey.currentState!.validate()) {
                           formKey.currentState!.save();
@@ -77,7 +77,7 @@ class _StudentFormState extends State<StudentForm> {
                               studentname: name!,
                               parentrhone: phone!,
                               idgroup: widget.groupId!);
-                          BlocProvider.of<GroupCubitCubit>(context)
+                          BlocProvider.of<StudentCubit>(context)
                               .addstudent(studentmodel);
                         } else {
                           autovalidateMode = AutovalidateMode.always;

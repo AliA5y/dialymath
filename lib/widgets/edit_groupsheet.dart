@@ -1,4 +1,4 @@
-import 'package:dialymath/cubits/cubit/group_cubit_cubit.dart';
+import 'package:dialymath/cubits/cubit/student_cubit.dart';
 import 'package:dialymath/models/group_model.dart';
 import 'package:dialymath/widgets/edit_groupform.dart';
 import 'package:flutter/material.dart';
@@ -30,7 +30,7 @@ class _EditgroupsheetState extends State<Editgroupsheet> {
       },
       builder: (context, state) {
         return AbsorbPointer(
-            absorbing: state is AddgroupLoading ? true : false,
+            absorbing: state is AddStudentLoading ? true : false,
             child: Padding(
               padding: EdgeInsets.only(
                   left: 16,

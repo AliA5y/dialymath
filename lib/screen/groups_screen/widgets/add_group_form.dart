@@ -1,4 +1,4 @@
-import 'package:dialymath/cubits/cubit/group_cubit_cubit.dart';
+import 'package:dialymath/cubits/cubit/student_cubit.dart';
 import 'package:dialymath/models/group_model.dart';
 import 'package:dialymath/screen/groups_screen/cubit/group_cubit.dart';
 import 'package:dialymath/widgets/coustm_bt.dart';
@@ -76,7 +76,8 @@ class _AddGroupFormState extends State<AddGroupForm> {
                                   groupgrade: grade!,
                                   grouptime: time!,
                                   day: widget.day);
-                              BlocProvider.of<GroupCubit>(context).addGroup(groupmodel);
+                              BlocProvider.of<GroupCubit>(context)
+                                  .addGroup(groupmodel);
                             } else {
                               autovalidateMode = AutovalidateMode.always;
                               setState(() {});
