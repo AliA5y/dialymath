@@ -12,7 +12,7 @@ void main() async {
   await Hive.initFlutter();
   Bloc.observer = SimpleBlocObserver();
   Hive.registerAdapter(GroupModelAdapter());
-  Hive.registerAdapter(StudentmodelAdapter());
+  Hive.registerAdapter(StudentModelAdapter());
   await BoxManager.instance.initialize();
   runApp(const Dialymath());
 }
@@ -27,7 +27,7 @@ class Dialymath extends StatelessWidget {
         home: const Splashscreen(),
         debugShowCheckedModeBanner: false,
         routes: {
-          'SplashScreen':(context)=>const Splashscreen(),
+          'SplashScreen': (context) => const Splashscreen(),
         },
         initialRoute: 'SplashScreen',
       ),
